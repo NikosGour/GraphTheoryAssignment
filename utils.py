@@ -58,7 +58,9 @@ def find_best_threshold_rank_amazon(G: nx.Graph, starting_rank=2, rank_step=50):
             # and the synthetic matrix has floats. By applying a threshold, we can "interpret" the synthetic matrix as a
             # matrix of 0s and 1s
             synthetic_adjacency_matrix_with_thresholded = np.where(synthetic_adjacency_matrix > threshold, 1, 0)
-            if np.count_nonzero(synthetic_adjacency_matrix_with_thresholded == 1) < G.size():
+
+            # we want to asure that the synthetic matrix has at least the same number of edges as the original graph
+            if np.count_nonzero(synthetic_adjacency_matrix_with_thresholded == 1) <= G.size():
                 continue
 
             # Finding the precision of the factorized matrix

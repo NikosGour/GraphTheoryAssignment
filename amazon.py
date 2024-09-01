@@ -1,12 +1,8 @@
-import os
-
+import networkx as nx
 import numpy as np
-from matplotlib import pyplot as plt
 
 import parsing
 from StochasticGradientDescent import sequential_stochastic_gradient_descent
-import networkx as nx
-
 from utils import find_best_threshold_rank_amazon
 
 G = parsing.amazon_parse_edges("Amazon0601.txt", limit_nodes=1000)

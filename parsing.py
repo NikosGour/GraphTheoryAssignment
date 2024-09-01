@@ -1,8 +1,5 @@
 import os
 import networkx as nx
-import glob
-
-from matplotlib import pyplot as plt
 
 project_dir = os.path.dirname(os.path.abspath(__file__))
 data_dir = "data"

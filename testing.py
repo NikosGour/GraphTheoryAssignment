@@ -15,6 +15,3 @@ best_threshold, _, best_precision = find_best_threshold_rank(G, 2)
 Y_with_threshold = np.where(Y > best_threshold, 1, 0)
 print(Y_with_threshold)
 print(f"{best_precision * 100}%")
-
-nx.draw(G, with_labels=True)
-plt.show()
